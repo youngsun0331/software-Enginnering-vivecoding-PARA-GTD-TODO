@@ -1,3 +1,4 @@
+```mermaid
 -- 1. users 테이블
 CREATE TABLE users (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -48,3 +49,4 @@ CREATE TABLE tasks (
     FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE SET NULL,
     FOREIGN KEY (note_id) REFERENCES notes(id) ON DELETE SET NULL
 );
+```
