@@ -1,0 +1,196 @@
+.category-manage-page {
+  max-width: 640px;
+  margin: 0 auto;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===== Add Form ===== */
+.category-add-form {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.category-add-form__input {
+  flex: 1;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+}
+
+.category-add-form__select {
+  min-width: 120px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.category-add-form__submit {
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--accent);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.category-add-form__submit:hover:not(:disabled) {
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.category-add-form__submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== Error ===== */
+.category-manage-page__error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--danger-bg);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--danger);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-md);
+}
+
+/* ===== Category Groups ===== */
+.category-groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.category-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.category-group__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+  background: color-mix(in srgb, var(--group-color) 5%, transparent);
+}
+
+.category-group__icon {
+  font-size: 1.2rem;
+}
+
+.category-group__label {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--group-color);
+  flex: 1;
+}
+
+.category-group__count {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--group-color) 12%, transparent);
+  color: var(--group-color);
+}
+
+.category-group__items {
+  padding: var(--space-sm);
+}
+
+.category-group__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+  animation: fadeIn 0.3s ease;
+}
+
+.category-group__item:hover {
+  background: var(--bg-card-hover);
+}
+
+.category-group__item-actions {
+  display: flex;
+  align-items: center;
+}
+
+.category-group__delete {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  opacity: 0.5;
+  transition: all var(--transition-fast);
+}
+
+.category-group__item:hover .category-group__delete {
+  opacity: 1;
+}
+
+.category-group__delete:hover {
+  background: var(--danger-bg);
+}
+
+.category-group__confirm {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  animation: fadeIn 0.2s ease;
+}
+
+.category-group__confirm-text {
+  font-size: var(--font-size-xs);
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.category-group__confirm-yes,
+.category-group__confirm-no {
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.category-group__confirm-yes {
+  background: var(--danger);
+  color: white;
+}
+
+.category-group__confirm-yes:hover {
+  opacity: 0.9;
+}
+
+.category-group__confirm-no {
+  color: var(--text-secondary);
+}
+
+.category-group__confirm-no:hover {
+  background: var(--bg-card-hover);
+}

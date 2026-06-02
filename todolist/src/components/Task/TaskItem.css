@@ -1,0 +1,124 @@
+.task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+}
+
+.task-item:hover {
+  background: var(--bg-card-hover);
+}
+
+.task-item--done {
+  opacity: 0.6;
+}
+
+/* ===== Checkbox ===== */
+.task-item__checkbox {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  margin-top: 2px;
+}
+
+.task-item__checkbox:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.task-item__checkbox--checked {
+  border-color: var(--success);
+  background: var(--success);
+}
+
+.task-item__checkbox--checked:hover {
+  border-color: var(--success);
+  background: var(--success);
+  opacity: 0.8;
+}
+
+.task-item__checkmark {
+  width: 12px;
+  height: 12px;
+  color: white;
+  animation: checkmark 0.2s ease;
+}
+
+/* ===== Content ===== */
+.task-item__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.task-item__title {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.task-item__title--done {
+  text-decoration: line-through;
+  color: var(--text-tertiary);
+}
+
+.task-item__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.task-item__categories {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.task-item__due-date {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+}
+
+/* ===== Actions ===== */
+.task-item__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.task-item__actions--visible {
+  opacity: 1;
+}
+
+.task-item__action-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.task-item__action-btn:hover {
+  background: var(--bg-card);
+  transform: scale(1.1);
+}

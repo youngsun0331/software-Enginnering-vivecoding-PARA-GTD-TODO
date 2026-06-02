@@ -1,0 +1,55 @@
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--badge-bg);
+  border: 1px solid color-mix(in srgb, var(--badge-color) 30%, transparent);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--badge-color);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.category-badge--md {
+  padding: 4px 12px;
+  font-size: var(--font-size-sm);
+}
+
+.category-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--badge-color);
+  flex-shrink: 0;
+}
+
+.category-badge--md .category-badge__dot {
+  width: 8px;
+  height: 8px;
+}
+
+.category-badge__name {
+  line-height: 1;
+}
+
+.category-badge__remove {
+  margin-left: 2px;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  color: var(--badge-color);
+  transition: all var(--transition-fast);
+  line-height: 1;
+}
+
+.category-badge__remove:hover {
+  background: var(--badge-color);
+  color: white;
+}

@@ -1,0 +1,96 @@
+.inbox-page {
+  max-width: 720px;
+  margin: 0 auto;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ===== Stats ===== */
+.inbox-page__stats {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.inbox-page__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  min-width: 64px;
+}
+
+.inbox-page__stat-count {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.inbox-page__stat--done .inbox-page__stat-count {
+  color: var(--success);
+}
+
+.inbox-page__stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+}
+
+/* ===== Error ===== */
+.inbox-page__error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--danger-bg);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--danger);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-md);
+  animation: fadeIn 0.3s ease;
+}
+
+.inbox-page__error-retry {
+  margin-left: auto;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--danger);
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.inbox-page__error-retry:hover {
+  opacity: 0.9;
+}
+
+/* ===== Filters ===== */
+.inbox-page__filters {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-xs);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+}
+
+.inbox-page__filter {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  flex: 1;
+  text-align: center;
+}
+
+.inbox-page__filter:hover {
+  color: var(--text-primary);
+}
+
+.inbox-page__filter--active {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
