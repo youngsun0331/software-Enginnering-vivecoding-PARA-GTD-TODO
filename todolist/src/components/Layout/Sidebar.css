@@ -134,8 +134,35 @@
   color: white;
 }
 
+.sidebar__user-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
 .sidebar__username {
   font-size: var(--font-size-sm);
   font-weight: 500;
   color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__logout {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  text-align: left;
+  padding: 0;
+  margin-top: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.sidebar__logout:hover {
+  color: var(--danger);
+  text-decoration: underline;
 }

@@ -5,19 +5,9 @@ const API = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: true, // 세션 쿠키(JSESSIONID) 자동 포함
 });
 
-// 하드코딩된 User UUID
-const HARDCODED_USER_ID = '550e8400-e29b-41d4-a716-446655440000';
-
-// 요청 인터셉터: X-User-Id 헤더 자동 주입
-API.interceptors.request.use(
-  (config) => {
-    config.headers['X-User-Id'] = HARDCODED_USER_ID;
-    return config;
-  },
-  (error) => Promise.reject(error)
-);
 
 // 응답 인터셉터: 에러 핸들링
 API.interceptors.response.use(

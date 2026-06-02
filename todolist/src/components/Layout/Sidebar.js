@@ -1,9 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { PARA_TYPE_ICON } from '../../constants/enums';
+import useAuthStore from '../../store/useAuthStore';
+import { logout as logoutApi } from '../../api/authApi';
 import './Sidebar.css';
 
 function Sidebar() {
+  const { user, clearUser } = useAuthStore();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logoutApi();
+    } catch (e) {
+      console.error('로그아웃 에러', e);
+    } finally {
+      clearUser();
+      navigate('/login');
+    }
+  };
+
   const navItems = [
     { path: '/inbox', label: 'Inbox', icon: '📥', id: 'nav-inbox' },
     { path: '/para/projects', label: 'Projects', icon: PARA_TYPE_ICON.PROJECT, id: 'nav-projects' },
@@ -54,8 +70,15 @@ function Sidebar() {
 
       <div className="sidebar__footer">
         <div className="sidebar__user">
-          <div className="sidebar__avatar">Y</div>
-          <span className="sidebar__username">사용자</span>
+          <div className="sidebar__avatar">
+            {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
+          </div>
+          <div className="sidebar__user-info">
+            <span className="sidebar__username">{user?.name || '사용자'}</span>
+            <button className="sidebar__logout" onClick={handleLogout}>
+              로그아웃
+            </button>
+          </div>
         </div>
       </div>
     </aside>
