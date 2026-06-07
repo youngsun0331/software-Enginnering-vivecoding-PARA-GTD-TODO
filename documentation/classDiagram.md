@@ -1,10 +1,11 @@
-classDiagram
-    class User {
-        +UUID id
-        +String email
-        +String name
-        +login()
-    }
+```mermaid
+    classDiagram
+        class User {
+            +UUID id
+            +String email
+            +String name
+            +login()
+        }
 
     class Project {
         +UUID id
@@ -69,3 +70,4 @@ classDiagram
     Note "1" <-- "0..*" Task : references
     
     Task "1" ..> "1" AIAnalyzer : uses >
+```
